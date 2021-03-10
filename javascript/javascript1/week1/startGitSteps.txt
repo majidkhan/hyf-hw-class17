@@ -1,0 +1,34 @@
+Step 1
+Majids-MBP:hyf-hw-class17 majidkhan$ ls
+
+Step 2
+Majids-MBP:hyf-hw-class17 majidkhan$ git status
+
+Step 3  // check branch
+Majids-MBP:hyf-hw-class17 majidkhan$ git branch -a // list all branches
+Majids-MBP:hyf-hw-class17 majidkhan$ git checkout javascript/javascript1/week1
+
+Step 4 // ading new files to git repo
+Majids-MBP:hyf-hw-class17 majidkhan$ git add javascript/javascript1/week1/index.html
+Majids-MBP:hyf-hw-class17 majidkhan$ git add javascript/javascript1/week1/script.js
+
+Step 5 // check status again 
+Majids-MBP:hyf-hw-class17 majidkhan$ git status
+
+Step 6 // commit 
+Majids-MBP:hyf-hw-class17 majidkhan$ git commit -m 'adding index and js file to week1''
+
+Step 7 // push to branch (master or any other)
+Majids-MBP:hyf-hw-class17 majidkhan$ git push origin javascript/javascript1/week1
+
+Step 8 // 
+
+Go to Git repo and merge branch into master if no code issues. 
+
+Step 9 // switch to master branch
+Majids-MBP:hyf-hw-class17 majidkhan$ git checkout master
+
+Step 10 //
+Majids-MBP:hyf-hw-class17 majidkhan$ git pull origin master
+
+AT THIS STAGE YOU SHOULD HAVE UPDATED DATA BOTH LOCALLY AND ON GIT ENJOG :-)
