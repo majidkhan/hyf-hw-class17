@@ -56,22 +56,28 @@ function getTemperature(temperature) {
 // Student manager
 // https://github.com/HackYourFuture-CPH/JavaScript/blob/master/javascript1/week2/homework.md#student-manager
 
-const class07Students = [];
+const class07Students = ["Majid Khan", "Tom Hanks", "Angelina Julie", "Peter Mastrup", "Elias Holm", "Jan Eriskon"];
 
 function addStudentToClass(studentName) {
 
     if( typeof studentName === 'string') {
-
-        if( class07Students.length == 7) {
+        // check if number of students are 7 max
+//        if( class07Students.length == 7) {
+    if( getNumberOfStudents() == 7) {
             console.log('Cannot add more students to class 07');
         } else {
-            class07Students.push(studentName);
+            // check if student already exists
+            if( class07Students.find( e => e == studentName)) {
+                console.log(studentName + ' is already in the class');
+            } else {
+                class07Students.push(studentName);
+            }
         }
     } else {
         console.log('Only real names are allowed');
     }
 }
 
-function getNumberOfStudents(class07Students) {
-    return class07Students.length;
+function getNumberOfStudents() {
+     return class07Students.length;
 }
