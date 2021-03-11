@@ -29,3 +29,26 @@ function getEventWeekday(eventInDesiredDays) {
 }
 // print dayName
 getEventWeekday(1);
+
+
+// TASK 3
+// Weather wear
+// https://github.com/HackYourFuture-CPH/JavaScript/blob/master/javascript1/week2/homework.md#weather-wear
+
+const clothesToWear = getTemperature(7);
+console.log(clothesToWear); // Logs out: "shorts and a t-shirt"
+
+function getTemperature(temperature) {
+    if ( temperature > 22 ) {
+        return 'shorts and t-shir';
+    } else if( temperature > 17 ) {
+        return 'pants and full sleev shirt';
+    } else if( temperature > 10 ) {
+        return 'pants and sweater or fleece'
+    } else if( temperature > 4) {
+        return 'fleece pant and warm jacket';
+    } else {
+        return 'winter pant and winter jacket';
+    }
+}
+
