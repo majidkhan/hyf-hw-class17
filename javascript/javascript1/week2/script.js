@@ -52,3 +52,26 @@ function getTemperature(temperature) {
     }
 }
 
+// TASK 4
+// Student manager
+// https://github.com/HackYourFuture-CPH/JavaScript/blob/master/javascript1/week2/homework.md#student-manager
+
+const class07Students = [];
+
+function addStudentToClass(studentName) {
+
+    if( typeof studentName === 'string') {
+
+        if( class07Students.length == 7) {
+            console.log('Cannot add more students to class 07');
+        } else {
+            class07Students.push(studentName);
+        }
+    } else {
+        console.log('Only real names are allowed');
+    }
+}
+
+function getNumberOfStudents(class07Students) {
+    return class07Students.length;
+}
