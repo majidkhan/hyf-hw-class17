@@ -60,14 +60,15 @@ const class07Students = ["Majid Khan", "Tom Hanks", "Angelina Julie", "Peter Mas
 
 function addStudentToClass(studentName) {
 
-    if( typeof studentName === 'string') {
-        // check if number of students are 7 max
-//        if( class07Students.length == 7) {
-    if( getNumberOfStudents() == 7) {
-            console.log('Cannot add more students to class 07');
+    if( typeof studentName === 'string' && studentName != '') {
+        if( getNumberOfStudents() >= 7) {   // check if number of students are grear or equat to 7
+            if( studentName === 'Queen' && class07Students.includes('Queen') == false) {    // Queen can be added even if class is full
+                class07Students.push(studentName);
+            }else {
+                console.log('Cannot add more students to class 07');
+            }
         } else {
-            // check if student already exists
-            if( class07Students.find( e => e == studentName)) {
+            if( class07Students.find( e => e == studentName)) { // check if student already exists
                 console.log(studentName + ' is already in the class');
             } else {
                 class07Students.push(studentName);
@@ -77,7 +78,7 @@ function addStudentToClass(studentName) {
         console.log('Only real names are allowed');
     }
 }
-
+// get # of students admitted
 function getNumberOfStudents() {
      return class07Students.length;
 }
