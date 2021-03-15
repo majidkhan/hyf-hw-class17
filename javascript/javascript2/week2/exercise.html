@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise :: Javascript 2 - week 2</title>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<script>
+
+        // Mentors
+        const mentors = [
+        { "name": "Abed Sujan", "subjects": ['JS', 'HTML', 'CSS', 'NODEJS'], yearOfExperience: 4},
+        { "name": "Ahmed Magdy", "subjects": ['JS', 'Database', 'CSS'], yearOfExperience: 1},
+        { "name": "Alicia Gonzales", "subjects": ['DB', 'HTML', 'NODEJS'], yearOfExperience: 8},
+        { "name": "allan Thraen", "subjects": ['REACT', 'HTML', 'CSS'], yearOfExperience: 3},
+        { "name": "Anders Ravn", "subjects": ['JS', 'HTML', 'NODEJS'], yearOfExperience: 2},
+        { "name": "Daniel Fernandes", "subjects": ['Database', 'HTML', 'CSS'], yearOfExperience: 9}
+        ];
+
+//        console.log(mentors);    
+
+        function customFun( array, printFunc){
+            for(var i=0; i<= array.length; i++) {
+               var item = array[i];
+               printFunc(item);
+            }
+        }
+
+        function printFunc(item) {
+            console.log('Name is ' + item.name, item.yearOfExperience);
+        }
+        console.log(customFun(mentors, printFunc));
+        console.log('---------- Custom finish-------------');
+
+        // ForEach
+        mentors.forEach(function(mentor) {
+            console.log(mentor);
+            console.log(mentor.name);
+
+            mentor.subjects.forEach(function(subject) {
+                console.log(subject);
+            });
+        });
+        console.log('----------ForEach finish-------------');
+
+        // ForEach Homemade
+        function forEachHomemade(array, functionToExecute) {
+            for (let i = 0; i < array.length; i++) {
+                const currentItem = array[i];
+                functionToExecute(currentItem);
+            }
+        }
+
+        function functionToExecute(item) {
+            console.log(item.name, item.yearOfExperience);
+        }
+
+         console.log('Foreach Homemade/n', forEachHomemade(mentors, functionToExecute));
+         console.log('----------ForEach Homemade finish-------------');
+
+        // MAP
+        // We are mapping/transforming the mentors array. Same size, different items.
+        const mentorNames = mentors.map(function(mentor) {
+            return mentor.name;
+        });
+
+        const mentorNamesFormatted = mentors.map(function(mentor) {
+            return 'Mentors name is: ' + mentor.name;
+        });
+
+        const mentorSummary = mentors.map(function(mentor) {
+            return `Mentors name is: ${mentor.name}. He has ${mentor.yearsOfExperience} years of experience`;
+        });        
+
+        console.log(mentorNames, mentorNamesFormatted, mentorSummary);
+        console.log('--------MAP finish---------------');
+
+
+        // Map homemade
+
+        function mapHomemade(array, functionToExecute) {
+            const mappedArray = [];
+            for (let i = 0; i < array.length; i++) {
+                const currentItem = array[i];
+                const newItem = functionToExecute(currentItem, i);
+                // This is where the magic happens!!!
+                mappedArray.push(newItem);
+            }
+
+            return mappedArray;
+        }
+
+        console.log('Foreach Homemade/n', mapHomemade(mentors, functionToExecute));        
+        console.log('----------MAP Homemade finish-------------');
+
+
+    </script>
+</head>
+<body>
+    <h2>Exercise :: JS 2 Week 2 </h2>
+</body>
+</html>
