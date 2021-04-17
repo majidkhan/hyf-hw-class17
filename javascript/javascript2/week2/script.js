@@ -34,6 +34,9 @@ const moviesBetween1980and1989 = movies.filter(function(movie) {
 // movies rating
 // Good (>= 7), Average (>= 4 and < 7), Bad (< 4)
 const moviesRating = movies.filter(function(movie) {
+    if(movie.rating >= 7) {
+        
+    }
     const goodMovies = movie.rating >= 7;
     let badMovies = movie.rating < 4;
     let averageMovies = movie.rating >=4 && movie.rating <7;
